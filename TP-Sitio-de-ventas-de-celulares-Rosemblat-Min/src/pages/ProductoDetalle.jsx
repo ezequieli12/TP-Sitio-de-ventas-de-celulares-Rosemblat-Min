@@ -1,21 +1,24 @@
-import { useParams } from "react-router-dom";
-import { celulares } from "../data/data";
+import { useParams } from 'react-router-dom';
+import { celulares } from '../data/data';
 
 const ProductoDetalle = () => {
   const { idCelular } = useParams();
-  const producto = celulares.find(c => c.id === Number(idCelular));
+  const celular = celulares.find(c => c.id === parseInt(idCelular));
 
-  if (!producto) return <p>Producto no encontrado</p>;
+  if (!celular) return <p>Producto no encontrado</p>;
 
   return (
-    <section>
-      <h2>{producto.nombre}</h2>
-      <p>{producto.descripcion}</p>
-      <p><strong>${producto.precio}</strong></p>
-      <div className="galeria">
-        {producto.fotos.map((src, i) => (
-          <img key={i} src={src} alt={`Foto ${i + 1}`} />
-        ))}
+    <section className="container">
+      <div className="card" style={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
+        <div style={{ flex: 1 }}>
+          <img src={celular.fotos[0]} alt={celular.nombre} style={{ maxHeight: '300px', objectFit: 'contain' }} />
+        </div>
+        <div style={{ flex: 2 }}>
+          <h2>{celular.nombre}</h2>
+          <p>{celular.descripcion}</p>
+          <p><strong>Precio:</strong> ${celular.precio}</p>
+          <button className="btn">Comprar ahora</button>
+        </div>
       </div>
     </section>
   );
