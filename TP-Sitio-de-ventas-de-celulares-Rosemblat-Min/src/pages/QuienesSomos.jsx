@@ -1,14 +1,32 @@
 const QuienesSomos = () => {
   return (
-    <section className="container">
-      <h2>Quiénes Somos</h2>
-      <p>
-        Somos una tienda dedicada a ofrecer los mejores celulares del mercado. Trabajamos con marcas reconocidas como Apple, Samsung, Motorola y Xiaomi, trayendo siempre lo último en tecnología al mejor precio. Nos destacamos por nuestro compromiso con la calidad, la atención personalizada y un proceso de compra simple y seguro.
-      </p>
-      <p>
-        Nuestro equipo está formado por apasionados de la tecnología que te ayudarán a encontrar el celular ideal para vos.
-      </p>
-    </section>
+    <div className="quienes-somos">
+      <h1>Quiénes Somos</h1>
+      
+      <section>
+        <h2>Nuestra Historia</h2>
+        <p>
+          Somos una tienda especializada en la venta de celulares de última generación, 
+          con más de 10 años de experiencia en el mercado.
+        </p>
+      </section>
+      
+      <section>
+        <h2>Nuestra Misión</h2>
+        <p>
+          Proporcionar a nuestros clientes los mejores dispositivos móviles con 
+          asesoramiento profesional y precios competitivos.
+        </p>
+      </section>
+      
+      <section>
+        <h2>Nuestro Equipo</h2>
+        <p>
+          Contamos con un equipo de expertos en tecnología móvil que te ayudará 
+          a encontrar el dispositivo perfecto para tus necesidades.
+        </p>
+      </section>
+    </div>
   );
 };
 

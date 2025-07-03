@@ -1,29 +1,26 @@
 import { Link } from 'react-router-dom';
 import { marcas } from '../data/data';
+import DropdownMarcas from './DropdownMarcas';
 
 const Navbar = () => {
   return (
-    <header>
-      <h1>CelularesShop</h1>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/quienes-somos">Quienes Somos</Link></li>
-          <li className="dropdown">
-            <span>Productos</span>
-            <div className="dropdown-content">
-              <Link to="/productos">Ver todos</Link>
-              {marcas.map((marca) => (
-                <Link key={marca.id} to={`/productos/${marca.id}`}>{marca.nombre}</Link>
-              ))}
-            </div>
-          </li>
-          <li><Link to="/contacto">Contacto</Link></li>
-        </ul>
-      </nav>
-    </header>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          TiendaCelulares
+        </Link>
+        
+        <div className="navbar-menu">
+          <Link to="/" className="navbar-link">Home</Link>
+          <Link to="/quienes-somos" className="navbar-link">Quiénes Somos</Link>
+          
+          <DropdownMarcas marcas={marcas} />
+          
+          <Link to="/contacto" className="navbar-link">Contacto</Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
